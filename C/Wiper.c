@@ -7,6 +7,7 @@
 
 //Compiled with Code::Blocks on Windows 10 22_2H.
 //It will be flagged. Disable Windows Defender or any other AV
+//Run as Administrator
 
 #include <stdio.h>
 #include <stdlib.h>
