@@ -9,6 +9,8 @@ apt-get clean -y
 apt-get install gdb -y
 apt-get install gdb-peda -y
 apt-get install htop -y
+apt-get install strace -y
+apt-get install ltrace -y
 apt-get install vlc -y
 apt-get install gwenview -y
 apt-get install ark -y
@@ -20,4 +22,4 @@ apt-get install xxd -y
 apt-get install hexedit -y
 apt-get install seclists -y
 #rustscan
-echo "Script Executed"
+echo "Done"
