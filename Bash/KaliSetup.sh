@@ -1,13 +1,12 @@
 #!/bin/bash
 
 #Setup on Kali
-apt-get update -y
+apt-get update
 apt-get upgrade -y
 apt-get dist-upgrade -y
 apt-get autoremove -y
 apt-get clean -y
 apt-get install gdb -y
-apt-get install gdb-peda -y
 apt-get install htop -y
 apt-get install strace -y
 apt-get install ltrace -y
@@ -22,4 +21,5 @@ apt-get install xxd -y
 apt-get install hexedit -y
 apt-get install seclists -y
 #rustscan
+#git clone https://github.com/longld/peda.git ~/peda
 echo "Done"
