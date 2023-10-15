@@ -20,5 +20,5 @@ apt-get install xxd -y
 apt-get install hexedit -y
 apt-get install seclists -y
 #rustscan
-#git clone https://github.com/longld/peda.git ~/peda
+#https://github.com/longld/peda
 echo "Done"
