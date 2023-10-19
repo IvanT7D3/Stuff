@@ -13,6 +13,7 @@ dd if=/dev/urandom of=/dev/$Device bs=4096 status=progress
 echo "[+] Device wiped!"
 echo "[+] Creating new partition..."
 
+#Adjust options to suit each need
 fdisk /dev/$Device <<EEOF
 n
 
@@ -25,5 +26,4 @@ EEOF
 echo "[+] Created new partition!"
 echo "[+] Formatting new partition..."
 mkfs.ext4 /dev/$DevicePartition
-echo "[+] Partition created!"
 echo "[+] All Done :)"
