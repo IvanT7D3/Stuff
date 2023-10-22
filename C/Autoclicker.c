@@ -4,7 +4,7 @@
 
 int main()
 {
-	printf("Press Z to enable, X to disable, C to pause\n");
+	printf("Press Z to enable, X to quit, C to pause\n");
 	_Bool Click = 0;
 	int ClickNum = 0;
 	while (1)
