@@ -21,7 +21,7 @@ int main()
 	CHOICEP1:
 	printf("\n");
 	printf("Player 1's choice\n1 : Rock\n2 : Paper\n3 : Scissor\n:");
-	scanf("%d", &ChoiceP1);
+	scanf("%1d", &ChoiceP1);
 	if (ChoiceP1 == 1)
 	{
 		RockP1 = 1;
@@ -41,7 +41,7 @@ int main()
 	system("clear");
 	CHOICEP2:
 	printf("Player 2's choice\n1 : Rock\n2 : Paper\n3 : Scissor\n:");
-	scanf("%d", &ChoiceP2);
+	scanf("%1d", &ChoiceP2);
 	if (ChoiceP2 == 1)
 	{
 		RockP2 = 1;
@@ -106,7 +106,7 @@ int main()
 	CHOOSE:
 	printf("Results:\nWins Player 1 : %d\nWins Player 2 : %d\nDraws : %d\n", WinsP1, WinsP2, Draws);
 	printf("Do you want to play again?\n1 : Yes, 2 : No:");
-	scanf("%d", &NewGame);
+	scanf("%1d", &NewGame);
 	if(NewGame == 1)
 	{
 		system("clear");
