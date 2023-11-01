@@ -15,7 +15,7 @@ int main()
 
 	system("clear");
 	printf("Choose 0 to encrypt. Choose 1 to decrypt: ");
-	scanf("%d", &Choice);
+	scanf("%1d", &Choice);
 	if (Choice != 0 && Choice != 1)
 	{
 		printf("Invalid option\n");
@@ -29,16 +29,16 @@ int main()
 
 		for (int i = 0; i < 8; i++) //GetBitsToXOR
 		{
-			printf("Choose bit %d to store. MAX storable bits are 8: ", countNoToXOR);
-			scanf("%d", &NoToXOR[i]);
+			printf("Choose bit %d to store: ", countNoToXOR);
+			scanf("%1d", &NoToXOR[i]);
 			printf("\n");
 			countNoToXOR++;
 		}
 
 		for (int j = 0; j < 8; j++) //GetXORKey
 		{
-			printf("Choose bit %d of the XOR key (Secret Key). MAX storable bits are 8: ", countXORKey);
-			scanf("%d", &XORKey[j]);
+			printf("Choose bit %d of the XOR key: ", countXORKey);
+			scanf("%1d", &XORKey[j]);
 			printf("\n");
 			countXORKey++;
 		}
@@ -76,16 +76,16 @@ int main()
 
 		for (int i = 0; i < 8; i++) //GetBitsToDecrypt
 		{
-			printf("Choose bit %d to decrypt. MAX storable bits are 8: ", countDecryptText);
-			scanf("%d", &Text[i]);
+			printf("Choose bit %d to decrypt: ", countDecryptText);
+			scanf("%1d", &Text[i]);
 			printf("\n");
 			countDecryptText;
 		}
 
 		for (int j = 0; j < 8; j++) //GetXORKeyBits
 		{
-			printf("Choose bit %d of the XOR key (Secret Key). MAX storable bits are 8: ", countXORKey);
-			scanf("%d", &XORKey[j]);
+			printf("Choose bit %d of the XOR key: ", countXORKey);
+			scanf("%1d", &XORKey[j]);
 			printf("\n");
 			countXORKey++;
 		}
