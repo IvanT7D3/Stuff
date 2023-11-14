@@ -20,6 +20,10 @@ n
 
 
 
+p
+t
+b
+a
 w
 EEOF
 
