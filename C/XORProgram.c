@@ -76,7 +76,7 @@ int main()
 
 		for (int i = 0; i < 8; i++) //GetBitsToDecrypt
 		{
-			printf("Choose bit %d to decrypt: ", countDecryptText);
+			printf("Choose bit %d to decrypt: ", i);
 			scanf("%1d", &Text[i]);
 			printf("\n");
 			countDecryptText;
