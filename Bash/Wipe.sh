@@ -29,5 +29,5 @@ EEOF
 
 echo "[+] Created new partition!"
 echo "[+] Formatting new partition..."
-mkfs.ext4 /dev/$DevicePartition
+mkfs -t vfat /dev/$DevicePartition
 echo "[+] All Done :)"
