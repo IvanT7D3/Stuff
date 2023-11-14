@@ -76,10 +76,10 @@ int main()
 
 		for (int i = 0; i < 8; i++) //GetBitsToDecrypt
 		{
-			printf("Choose bit %d to decrypt: ", i);
+			printf("Choose bit %d to decrypt: ", countDecryptText);
 			scanf("%1d", &Text[i]);
 			printf("\n");
-			countDecryptText;
+			countDecryptText++;
 		}
 
 		for (int j = 0; j < 8; j++) //GetXORKeyBits
