@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ $EUID -ne 0 ]; then
+  echo -e "Execute as Root!"
+  exit 1
+fi
 apt-get update
 apt-get upgrade -y
 apt-get dist-upgrade -y
