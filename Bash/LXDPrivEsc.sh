@@ -1,9 +1,11 @@
 #!/bin/bash
 
-#Tested on the room gamingserver on TryHackMe
+#Tested on the following rooms on TryHackMe:
+#gamingserver, colddboxeasy
+
 #Transfer this file on the victim machine
 #Our user must be part of the lxd group
-#In some cases it may not spawn a root shell
+#In some cases it may not spawn a root shell!
 
 cd /tmp
 echo "Execute the following commands on the attacker machine:"
