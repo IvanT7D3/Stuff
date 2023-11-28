@@ -2,21 +2,21 @@
 
 int main()
 {
-  char character;
+  char Character;
   while (1)
   {
     printf("Insert A Character: ");
-    scanf("%2c", &character);
+    scanf(" %1c", &Character);
     printf("\n");
-    if (character == 'Q')
+    if (Character == 'Q')
     {
       printf("Quitting...");
       return 0;
     }
     else
     {
-      int ASCII = character;
-      printf("Character is: %c | ASCII Value is: %d\n", character, ASCII);
+      int ASCII = Character;
+      printf("Character is: %c | ASCII Value is: %d\n", Character, ASCII);
     }
   }
 }
