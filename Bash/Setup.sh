@@ -1,14 +1,21 @@
 #!/bin/bash
+#Kali Linux Basic Setup
+
+Color_Off='\033[0m'
+Red='\033[1;31m'
+Green='\033[1;92m'
 
 if [ $EUID -ne 0 ]; then
-  echo -e "Execute as Root!"
-  exit 1
+	echo -e "${Red}Execute as Root!${Color_Off}"
+	exit 1
 fi
+
 apt-get update
 apt-get upgrade -y
 apt-get dist-upgrade -y
 apt-get autoremove -y
 apt-get clean -y
+apt-get install libreoffice -y
 apt-get install gdb -y
 apt-get install htop -y
 apt-get install strace -y
@@ -23,6 +30,10 @@ apt-get install steghide -y
 apt-get install xxd -y
 apt-get install hexedit -y
 apt-get install seclists -y
+apt-get install exifcleaner -y
+apt-get install openjdk-11-jdk-headless -y
+apt-get install poppler-utils -y
+pip3 install updog
 #rustscan
 #https://github.com/longld/peda
-echo "Done"
+echo -e "${Green}All done. Please restart!${Color_Off}"
