@@ -30,8 +30,8 @@ apt-get install wifiphisher -y
 apt-get install steghide -y
 apt-get install xxd -y
 apt-get install hexedit -y
-#apt-get install seclists -y
-apt-get install exifcleaner -y
+apt-get install seclists -y
+#apt-get install exifcleaner -y
 apt-get install openjdk-11-jdk-headless -y
 apt-get install poppler-utils -y
 apt-get install mosquitto mosquitto-clients -y
