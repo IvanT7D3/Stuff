@@ -9,11 +9,8 @@ if [ $EUID -ne 0 ]; then
 	exit 1
 fi
 
-apt-get update -y
-apt-get upgrade -y
-apt-get dist-upgrade -y
-apt-get autoremove -y
-apt-get install htop gdb strace ltrace vlc gwenview ark tor virtualbox wifiphisher gobuster feroxbuster steghide xxd hexedit seclists openjdk-11-jdk.headless poppler-utils mosquitto mosquitto-clients sshuttle chisel ghidra golang bloodhound neo4j
-pip3 install updog
-pip3 install bpytop
+apt-get update; apt-get upgrade -y; apt-get dist-upgrade -y; apt-get autoremove -y; apt-get autoclean
+apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential htop gdb strace ltrace vlc gwenview ark tor virtualbox wifiphisher gobuster feroxbuster steghide xxd lynx hexedit seclists openjdk-11-jdk.headless poppler-utils mosquitto mosquitto-clients sshuttle chisel ghidra golang bloodhound neo4j -y
+usermod -a -G vboxusers kali
+apt install python3-pwntools
 echo -e "${Green}All done. Please restart!${Color_Off}"
