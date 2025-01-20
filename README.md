@@ -1,2 +1,2 @@
 # Stuff
-Stuff I've made in different programming/scripting languages.
+Stuff I made in different programming/scripting languages.
