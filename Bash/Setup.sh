@@ -20,7 +20,7 @@ echo -e "${Green}Upgrading${Color_Off}"
 apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get autoclean -y && apt-get autoremove -y && apt-get upgrade --fix-missing -y
 
 echo -e "${Green}Installing main stuff${Color_Off}"
-apt-get install python3 python3-pip python3-dev python3-pwntools git libssl-dev libffi-dev build-essential libreoffice htop gdb strace ltrace vlc gwenview rustup docker.io jd-gui ark tor wifiphisher gobuster feroxbuster steghide xxd lynx hexedit seclists openjdk-11-jdk.headless poppler-utils mosquitto mosquitto-clients sshuttle chisel ghidra golang bloodhound neo4j vbindiff jq linux-headers-generic gcc-mingw-w64 -y
+apt-get install python3 python3-pip python3-dev python3-pwntools git libssl-dev libffi-dev build-essential libreoffice htop gdb strace ltrace vlc gwenview rustup docker.io jd-gui ark tor wifiphisher gobuster feroxbuster steghide xxd lynx hexedit geany geany-plugins seclists openjdk-11-jdk.headless poppler-utils mosquitto mosquitto-clients sshuttle chisel ghidra golang bloodhound neo4j vbindiff jq linux-headers-generic gcc-mingw-w64 -y
 
 echo -e "${Green}Installing bluetooth stuff${Color_Off}"
 apt-get install bluelog blueranger btscanner redfang -y
